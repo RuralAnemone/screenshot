@@ -3,9 +3,23 @@ var script = document.createElement('script'); script.src = "https://html2canvas
   html2canvas(screenshotTarget).then((canvas) => {
     const base64image = canvas.toDataURL("image/png");
     options(base64image);
+    console.log(`image url: ${base64image}`);
   });
 }
 
 function options(a) {
-   window.confirm('press "ok" to copy the image url or "cancel" to redirect to image url') ? navigator.clipboard.writeText(a) : window.location = a
+  var r;
+  if (window.confirm('copy the image url?')) {
+    navigator.clipboard.writeText(a).catch(e=>alert(`error: ${e}`));
+    r++;
+  }
+  
+  if (window.confirm('redirect to image?')) {
+    window.location.href = a;
+    r++;
+  }
+  
+  if (!r) {
+    alert('oh ok\nI guess not then :)')
+  }
 }
