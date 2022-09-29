@@ -19,7 +19,7 @@ function options(a) {
     r++;
   }
   
-  if (!r) {
+  if (r != 0) {
     alert('oh ok\nI guess not then :)')
   }
 }
