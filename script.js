@@ -21,10 +21,10 @@ h2c.onload = function() {
 }
 
 function options(image) {
-  if (window.confirm('copy the image url?')) {
-    navigator.clipboard.writeText(image).catch(e=>alert(`error: ${e}`));
+  jswindow.onload = function() {
+    console.log("jswindow loaded");
+    let w = new jswindow({title: "Generated screenshot:", icon: "https://assets.stickpng.com/images/580b585b2edbce24c47b2a2c.png"});
+    w.innerWindow.innerHTML = '<img src="' + image + '"></img>';
+    w.open({width: 200, height: 200});
   }
-  let w = new jswindow({title: "Generated screenshot:", icon: "https://assets.stickpng.com/images/580b585b2edbce24c47b2a2c.png"});
-  w.innerWindow.innerHTML = '<img src="' + image + '"></img>';
-  w.open({width: 200, height: 200});
 }
