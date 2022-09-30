@@ -11,3 +11,12 @@ javascript:(function(){script = document.createElement("script");script.src="htt
 click it and follow the prompts to screenshot any page!
 
 (this is especially (and probably *only*) useful if for some reason your school has blocked screenshots)
+
+<br><br><br>
+
+but hey it works
+<br>
+<br>
+and it's fun
+<br>
+I guess
